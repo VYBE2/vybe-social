@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VYBE — Meet Your World</title>
+
+<style>
+:root {
+  --bg: #090909;
+  --panel: #151515;
+  --gold: #d6ad54;
+  --text: #ffffff;
+  --muted: #aaaaaa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  border-bottom: 1px solid #292929;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+button {
+  background: var(--gold);
+  color: #090909;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.hero {
+  text-align: center;
+  padding: 85px 20px 65px;
+  background:
+    radial-gradient(ellipse at top, #332610 0%, #090909 65%);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  margin: 0 0 20px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.8;
+  margin: 0 auto 28px;
+}
+
+.section {
+  padding: 35px 7%;
+}
+
+.section h2 {
+  color: var(--gold);
+  margin-bottom: 22px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--panel);
+  padding: 25px;
+  border: 1px solid #292929;
+  border-radius: 14px;
+}
+
+.card .icon {
+  font-size: 30px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.card button {
+  margin-top: 10px;
+}
+
+.notice {
+  border: 1px solid #725a2d;
+  border-radius: 10px;
+  padding: 18px;
+  color: #d6c39c;
+  line-height: 1.7;
+}
+
+footer {
+  padding: 30px 15px;
+  border-top: 1px solid #292929;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 18px 5%;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 65px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">VYBE</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#rooms">Chatrooms</a>
+    <a href="#discover">Discover</a>
+    <a href="#dating">Dating</a>
+  </nav>
+
+  <button onclick="showMessage('Account registration will be added in our next development stage.')">
+    Join VYBE
+  </button>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <h1>Your People.<br>Your <span>VYBE.</span></h1>
+
+  <p>
+    Meet new people, join conversations, discover communities,
+    and build meaningful connections. Your next conversation
+    could change everything.
+  </p>
+
+  <button onclick="showMessage('Registration is coming soon!')">
+    Get Started
+  </button>
+</section>
+
+<section class="section" id="rooms">
+  <h2>Explore VYBE</h2>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="icon">💬</div>
+      <h3>Chatrooms</h3>
+      <p>
+        Join public conversations, meet people, and discuss
+        the things you love.
+      </p>
+      <button onclick="showMessage('Public chatrooms are coming soon!')">
+        Explore Rooms
+      </button>
+    </article>
+
+    <article class="card" id="discover">
+      <div class="icon">🌍</div>
+      <h3>Discover People</h3>
+      <p>
+        Find new friends and connect with people who share
+        your interests.
+      </p>
+      <button onclick="showMessage('People discovery is coming soon!')">
+        Discover
+      </button>
+    </article>
+
+    <article class="card" id="dating">
+      <div class="icon">❤️</div>
+      <h3>VYBE Dating</h3>
+      <p>
+        An adults-only space for people aged 18 and above
+        who are looking for romantic connections.
+      </p>
+      <button onclick="showMessage('Adult dating will launch only after age verification and safety features are implemented.')">
+        Explore Dating
+      </button>
+    </article>
+
+    <article class="card">
+      <div class="icon">✉️</div>
+      <h3>Private Messages</h3>
+      <p>
+        Continue conversations privately and build friendships
+        beyond the public rooms.
+      </p>
+      <button onclick="showMessage('Private messaging is coming soon!')">
+        Open Messages
+      </button>
+    </article>
+
+    <article class="card">
+      <div class="icon">👥</div>
+      <h3>Communities</h3>
+      <p>
+        Find communities for music, football, business,
+        entertainment, and more.
+      </p>
+      <button onclick="showMessage('VYBE Communities are coming soon!')">
+        Browse Groups
+      </button>
+    </article>
+
+    <article class="card">
+      <div class="icon">🎁</div>
+      <h3>VYBE Gifts</h3>
+      <p>
+        A future feature for sending digital gifts
+        and celebrating connections.
+      </p>
+      <button onclick="showMessage('VYBE Gifts will be introduced in a later phase.')">
+        Discover Gifts
+      </button>
+    </article>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="notice">
+    <strong>Welcome to VYBE.</strong><br>
+    This is our first website prototype. Accounts, real messaging,
+    and community features are not active yet. We will build and
+    test them before launching the platform publicly.
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 VYBE Social Network. Built to connect people.
+</footer>
+
+<script>
+function showMessage(message) {
+  alert(message);
+}
+</script>
+
+</body>
+</html>
